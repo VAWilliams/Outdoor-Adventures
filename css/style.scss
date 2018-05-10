@@ -1,0 +1,86 @@
+/*****defining variables*****/
+$firstPercent: 10%;
+$secondPercent: 20%;
+
+$firstColor: #6d3d73;
+$secondColor: #504e9b;
+
+/**setting the margin to zero fills out the max width for the body and a default font is also set**/
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+/**creating a background and setting the text color**/
+header {
+  background-image: url(https://wallup.net/wp-content/uploads/2016/03/10/329775-photography-nature-mountain-landscape-forest.jpg);
+  color: white;
+  padding: $firstPercent;
+  /*sizing and positioning of respective text*/
+  h1 {
+    font-size: 80px;
+    padding-bottom: 40px;
+  }
+  p {
+    margin-right: $secondPercent;
+    font-size: 13px;
+    font-weight: lighter;
+  }
+}
+
+/**designing & styling the navbar**/
+nav {
+  margin-top: -20px;
+  ul {
+    text-align: center;
+    word-spacing: 30px;
+    background-color: $firstColor;
+    color: white;
+    padding: 1%;
+    li {
+      display: inline;
+    }
+  }
+}
+
+/**creating a grid**/
+main {
+  display: grid;
+  grid-template-areas: "side art art art"
+                       "side contFirstRow contFirstRow contFirstRow"
+                       "side contSecondRow contSecondRow contSecondRow"
+                       "side contThirdRow contThirdRow contThirdRow"
+                       "side contFourthRow contFourthRow contFourthRow";
+  grid-template-columns: 0.5% repeat(3, 1fr);
+  grid-template-rows: 2fr repeat(4, 1fr);
+  /*height: 1500px;*/
+  grid-gap: 1px;
+}
+
+/**placing content into the grid*/
+section, #sidebar {
+  background-color: lightgrey;
+}
+
+#sidebar {
+  grid-area: side;
+}
+article {
+  grid-area: art;
+  padding: 5%;
+  h1 {
+    color: $firstColor;
+  }
+}
+#firstRowContent {
+  grid-area: contFirstRow;
+}
+#secondRowContent {
+  grid-area: contSecondRow;
+}
+#thirdRowContent {
+  grid-area: contThirdRow;
+}
+#fourthRowContent {
+grid-area: contFourthRow;
+}
