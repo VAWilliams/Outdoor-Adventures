@@ -6,29 +6,33 @@ body {
 
 /**creating a background and setting the text color**/
 header {
-  background-image: url(https://wallup.net/wp-content/uploads/2016/03/10/329775-photography-nature-mountain-landscape-forest.jpg);
+  top: 0;
+  position: fixed;
+  background-image: url(http://vunature.com/wp-content/uploads/2017/02/mountains-screen-dual-multi-monitor-hd-images-of-nature-for-desktop.jpg);
+  background-size: cover;
   color: white;
-  padding: 10%;
+  width: 100%;
+  padding: 5%;
   /*sizing and positioning of respective text*/ }
   header h1 {
-    font-size: 80px;
+    font-size: 55px;
     padding-bottom: 40px; }
-  header p {
-    margin-right: 20%;
-    font-size: 13px;
-    font-weight: lighter; }
+
+#content {
+  position: relative;
+  top: 12rem;
+  background-color: white; }
 
 /**designing & styling the navbar**/
-nav {
-  margin-top: -20px; }
-  nav ul {
-    text-align: center;
-    word-spacing: 30px;
-    background-color: #6d3d73;
-    color: white;
-    padding: 1%; }
-    nav ul li {
-      display: inline; }
+nav ul {
+  text-align: center;
+  word-spacing: 20px;
+  background-color: #284316;
+  color: white;
+  padding: 1%;
+  font-size: 15px; }
+  nav ul li {
+    display: inline; }
 
 /**creating a grid**/
 main {
@@ -36,7 +40,6 @@ main {
   grid-template-areas: "side art art art" "side contFirstRow contFirstRow contFirstRow" "side contSecondRow contSecondRow contSecondRow" "side contThirdRow contThirdRow contThirdRow" "side contFourthRow contFourthRow contFourthRow";
   grid-template-columns: 0.5% repeat(3, 1fr);
   grid-template-rows: 2fr repeat(4, 1fr);
-  /*height: 1500px;*/
   grid-gap: 1px; }
 
 /**placing content into the grid*/
@@ -44,13 +47,21 @@ section, #sidebar {
   background-color: lightgrey; }
 
 #sidebar {
+  background-color: white;
+  position: relative;
   grid-area: side; }
+
+#sidebar:hover {
+  background-color: white;
+  border: 5px #4b4b4b solid;
+  border-left: none;
+  width: 300px; }
 
 article {
   grid-area: art;
   padding: 5%; }
   article h1 {
-    color: #6d3d73; }
+    color: #284316; }
 
 #firstRowContent {
   grid-area: contFirstRow; }

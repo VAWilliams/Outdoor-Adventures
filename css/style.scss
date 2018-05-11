@@ -1,9 +1,11 @@
 /*****defining variables*****/
-$firstPercent: 10%;
-$secondPercent: 20%;
+$firstPercent: 5%;
+$secondPercent: 10%;
 
-$firstColor: #6d3d73;
-$secondColor: #504e9b;
+$firstColor: #284316;
+$secondColor: #4b4b4b;
+
+$firstRem: 15px;
 
 /**setting the margin to zero fills out the max width for the body and a default font is also set**/
 body {
@@ -13,30 +15,36 @@ body {
 
 /**creating a background and setting the text color**/
 header {
-  background-image: url(https://wallup.net/wp-content/uploads/2016/03/10/329775-photography-nature-mountain-landscape-forest.jpg);
+  top: 0;
+  position: fixed;
+  background-image: url(http://vunature.com/wp-content/uploads/2017/02/mountains-screen-dual-multi-monitor-hd-images-of-nature-for-desktop.jpg);
+  background-size: cover;
   color: white;
+  width: 100%;;
   padding: $firstPercent;
+
   /*sizing and positioning of respective text*/
   h1 {
-    font-size: 80px;
+    font-size: 55px;
     padding-bottom: 40px;
   }
-  p {
-    margin-right: $secondPercent;
-    font-size: 13px;
-    font-weight: lighter;
-  }
+}
+
+#content {
+  position: relative;
+  top: 12rem;
+  background-color: white;
 }
 
 /**designing & styling the navbar**/
 nav {
-  margin-top: -20px;
   ul {
     text-align: center;
-    word-spacing: 30px;
+    word-spacing: 20px;
     background-color: $firstColor;
     color: white;
     padding: 1%;
+    font-size: $firstRem;
     li {
       display: inline;
     }
@@ -53,7 +61,6 @@ main {
                        "side contFourthRow contFourthRow contFourthRow";
   grid-template-columns: 0.5% repeat(3, 1fr);
   grid-template-rows: 2fr repeat(4, 1fr);
-  /*height: 1500px;*/
   grid-gap: 1px;
 }
 
@@ -63,7 +70,16 @@ section, #sidebar {
 }
 
 #sidebar {
+  background-color: white;
+  position: relative;
   grid-area: side;
+
+}
+#sidebar:hover {
+  background-color: white;
+  border: 5px $secondColor solid;
+  border-left: none;
+  width: 300px;
 }
 article {
   grid-area: art;
