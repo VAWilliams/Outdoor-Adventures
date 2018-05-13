@@ -18,6 +18,7 @@ header {
     font-size: 55px;
     padding-bottom: 40px; }
 
+/***The rest of the content is seperated from the header and positioned so that it scrolls obove the header***/
 #content {
   position: relative;
   top: 12rem;
@@ -37,15 +38,16 @@ nav ul {
 /**creating a grid**/
 main {
   display: grid;
-  grid-template-areas: "side art art art" "side contFirstRow contFirstRow contFirstRow" "side contSecondRow contSecondRow contSecondRow" "side contThirdRow contThirdRow contThirdRow" "side contFourthRow contFourthRow contFourthRow";
-  grid-template-columns: 0.5% repeat(3, 1fr);
-  grid-template-rows: 2fr repeat(4, 1fr);
-  grid-gap: 1px; }
+  grid-template-areas: "side art art" "side contFirstRow contFirstRow" "side contSecondRow contSecondRow" "side contThirdRow contThirdRow" "side contFourthRow contFourthRow";
+  grid-template-columns: 0.5% repeat(2, 1fr);
+  grid-template-rows: 0.1fr repeat(2, 1fr) repeat(2, 0.8fr);
+  grid-gap: 10px; }
 
 /**placing content into the grid*/
-section, #sidebar {
-  background-color: lightgrey; }
-
+/*section, #sidebar {
+  background-color: lightgrey;
+}*/
+/**---------------------------------------**/
 #sidebar {
   background-color: white;
   position: relative;
@@ -57,22 +59,87 @@ section, #sidebar {
   border-left: none;
   width: 300px; }
 
+/**---------------------------------------**/
 article {
   grid-area: art;
   padding: 5%; }
   article h1 {
     color: #284316; }
 
-#firstRowContent {
+/*-----------*/
+img {
+  width: 100%; }
+
+/*-----------*/
+#hiking {
   grid-area: contFirstRow; }
 
-#secondRowContent {
+#camping {
   grid-area: contSecondRow; }
 
-#thirdRowContent {
+#fishing {
   grid-area: contThirdRow; }
 
-#fourthRowContent {
+#rockClimbing {
   grid-area: contFourthRow; }
+
+/***spacing the tect insde content***/
+section {
+  padding: 15px;
+  box-shadow: 0px 10px 40px darkgrey; }
+
+#beaverlacImg {
+  margin-top: 7.3%; }
+
+#kasteelPoortImg {
+  margin-top: 17%; }
+
+#paarlRockImg {
+  margin-top: 2%; }
+
+section h1, section h2 {
+  color: #284316; }
+
+h3 {
+  color: #4b4b4b; }
+
+hr {
+  background-color: #284316;
+  height: 2.5px;
+  border: none;
+  border-radius: 50%; }
+
+/*----------------------------------------*/
+/*---------Media Inquiries----------*/
+@media (min-width: 700px) {
+  section {
+    margin: 0 15%; }
+
+  img {
+    width: 90%;
+    margin: 0 5%; } }
+@media (min-width: 1024px) {
+  section {
+    margin: 0 2%; }
+
+  main {
+    grid-template-columns: 10% repeat(2, 1fr);
+    grid-template-rows: 0.1fr 1fr 0.5fr; }
+
+  #hiking {
+    grid-column: 2/3;
+    grid-row: 2/3; }
+
+  #camping {
+    grid-column: 3/4;
+    grid-row: 2/3; }
+
+  #fishing {
+    grid-column: 2/3;
+    grid-row: 3/4; }
+
+  #rockClimbing {
+    grid-column: 3/4;
+    grid-row: 3/4; } }
 
 /*# sourceMappingURL=style.css.map */

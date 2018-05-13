@@ -5,7 +5,7 @@ $secondPercent: 10%;
 $firstColor: #284316;
 $secondColor: #4b4b4b;
 
-$firstRem: 15px;
+$firstPix: 15px;
 
 /**setting the margin to zero fills out the max width for the body and a default font is also set**/
 body {
@@ -30,6 +30,7 @@ header {
   }
 }
 
+/***The rest of the content is seperated from the header and positioned so that it scrolls obove the header***/
 #content {
   position: relative;
   top: 12rem;
@@ -44,7 +45,7 @@ nav {
     background-color: $firstColor;
     color: white;
     padding: 1%;
-    font-size: $firstRem;
+    font-size: $firstPix;
     li {
       display: inline;
     }
@@ -54,20 +55,22 @@ nav {
 /**creating a grid**/
 main {
   display: grid;
-  grid-template-areas: "side art art art"
-                       "side contFirstRow contFirstRow contFirstRow"
-                       "side contSecondRow contSecondRow contSecondRow"
-                       "side contThirdRow contThirdRow contThirdRow"
-                       "side contFourthRow contFourthRow contFourthRow";
-  grid-template-columns: 0.5% repeat(3, 1fr);
-  grid-template-rows: 2fr repeat(4, 1fr);
-  grid-gap: 1px;
+  grid-template-areas: "side art art"
+                       "side contFirstRow contFirstRow"
+                       "side contSecondRow contSecondRow"
+                       "side contThirdRow contThirdRow"
+                       "side contFourthRow contFourthRow";
+  grid-template-columns: 0.5% repeat(2, 1fr);
+  grid-template-rows: 0.1fr repeat(2, 1fr) repeat(2, 0.8fr);
+  grid-gap: 10px;
 }
 
 /**placing content into the grid*/
-section, #sidebar {
+/*section, #sidebar {
   background-color: lightgrey;
-}
+}*/
+
+/**---------------------------------------**/
 
 #sidebar {
   background-color: white;
@@ -81,6 +84,8 @@ section, #sidebar {
   border-left: none;
   width: 300px;
 }
+/**---------------------------------------**/
+
 article {
   grid-area: art;
   padding: 5%;
@@ -88,15 +93,99 @@ article {
     color: $firstColor;
   }
 }
-#firstRowContent {
+
+/*-----------*/
+img {
+  width: 100%;
+}
+/*-----------*/
+
+#hiking {
   grid-area: contFirstRow;
 }
-#secondRowContent {
+#camping {
   grid-area: contSecondRow;
 }
-#thirdRowContent {
+#fishing {
   grid-area: contThirdRow;
 }
-#fourthRowContent {
+#rockClimbing {
 grid-area: contFourthRow;
+}
+
+/***spacing the tect insde content***/
+
+section {
+  padding: $firstPix;
+  // border: 1px lightgrey solid;
+  box-shadow: 0px 10px 40px darkgrey;
+}
+
+#beaverlacImg {
+  margin-top: $secondPercent - 2.7%;
+}
+
+#kasteelPoortImg {
+  margin-top: $secondPercent * 2 - 3%;
+}
+
+#paarlRockImg {
+  margin-top: $secondPercent - 8%;
+}
+
+section h1,section h2 {
+  color: $firstColor;
+}
+h3 {
+  color: $secondColor;
+}
+
+hr {
+  background-color: $firstColor;
+  height: 2.5px;
+  border: none;
+  border-radius: 50%;
+}
+
+/*----------------------------------------*/
+/*---------Media Inquiries----------*/
+@media (min-width: 700px) {
+  section {
+    margin: 0 $secondPercent + $firstPercent;
+  }
+  img {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+
+
+
+@media (min-width: 1024px) {
+  section {
+    margin: 0 $firstPercent - 3%;
+  }
+    main {
+      grid-template-columns: 10% repeat(2, 1fr);
+      grid-template-rows: 0.1fr 1fr 0.5fr;
+  }
+
+  #hiking {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  #camping {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  #fishing {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  #rockClimbing {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  }
+
 }
