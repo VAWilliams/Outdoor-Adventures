@@ -16,17 +16,20 @@
     <div id="content">
       <nav>
         <ul>
-          <li>Home</li>
-          <li id="categories">
-            Categories
-            <ul>
-              <li>Hiking</li>
-              <li>Fishing</li>
-              <li>Camping</li>
-              <li>Rock Climbing</li>
-            </ul>
+          <li><a href="indexHome.html">Home</a></li>
+
+          <li class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="#hiking">Hiking</a>
+              <a href="#fishing">Fishing</a>
+              <a href="#camping">Camping</a>
+              <a href="#rockClimbing">Rock Climbing</a>
+            </div>
           </li>
+
           <li>Gallery</li>
+
           <li>Contact</li>
         </ul>
       </nav>
@@ -42,13 +45,30 @@
             </p>
           </article>
 
-          <img id="hike" class="imgLinks" src="assets/images/pic.jpg" alt="">
+          <a href="#hiking">
+            <div id="hike" class="imgLinks">
+              <h1>Hiking</h1>
+            </div>
+          </a>
 
-          <img id="fish" class="imgLinks" src="assets/images/pic.jpg" alt="">
+          <a href="#fishing">
+            <div id="fish" class="imgLinks">
+              <h1>Fishing</h1>
+            </div>
+          </a>
 
-          <img id="camp" class="imgLinks" src="assets/images/pic.jpg" alt="">
+          <a href="#camping">
+            <div id="camp" class="imgLinks">
+              <h1>Camping</h1>
+            </div>
+          </a>
 
-          <img id="rockClimb" class="imgLinks" src="assets/images/pic.jpg" alt="">
+          <a href="#rockClimbing">
+            <div id="rockClimb" class="imgLinks">
+              <h1>Climbing</h1>
+            </div>
+          </a>
+
 
           <div id="fakeSidebar">
             <h1>Hover here for more.</h1>

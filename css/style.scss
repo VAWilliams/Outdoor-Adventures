@@ -44,17 +44,90 @@ nav {
     word-spacing: 20px;
     background-color: $firstColor;
     color: white;
-    padding: 1%;
+    padding: 0.5%;
     font-size: $firstPix;
     li {
       display: inline;
     }
-    #categories ul {
-      display: none;
-    }
   }
 }
 
+
+
+
+/*-----Dropdown menu-----*/
+.dropbtn {
+    background-color: $firstColor;
+    color: white;
+    padding: 16px 9px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 95px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: $firstColor;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: $firstColor;
+  background-color: grey;
+  filter: blur(0.5px);
+  overflow: hidden;
+}
+/*---------*/
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.imgLinks {
+  padding: 5%;
+  h1 {
+    padding: 5%;
+    color: white;
+  }
+}
+#hike {
+  background-image: url(https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb&h=350);
+  // background-size: cover;
+}
+#fish {
+  background-image: url(https://images.pexels.com/photos/205712/pexels-photo-205712.jpeg?auto=compress&cs=tinysrgb&h=350);
+  background-size: cover;
+}
+#camp {
+  background-image: url(https://images.pexels.com/photos/213807/pexels-photo-213807.jpeg?auto=compress&cs=tinysrgb&h=350);
+  background-size: cover;
+}
+#rockClimb {
+  background-image: url(https://images.pexels.com/photos/461593/pexels-photo-461593.jpeg?auto=compress&cs=tinysrgb&h=350);
+  background-size: cover;
+}
 /**creating a grid**/
 main {
   display: grid;
@@ -231,9 +304,9 @@ hr {
     color: white;
     background-color: $firstColor;
     position: sticky;
-    top: 10px;
+    top: 13px;
     grid-area: side;
-    height: 22.8%;
+    height: 26%;
     /*h1 {
       background-color: $firstColor;
       padding: 10%;
