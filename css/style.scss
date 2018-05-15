@@ -7,6 +7,21 @@ $secondColor: #4b4b4b;
 
 $firstPix: 15px;
 
+/*--styling for both the fake and real sidebar--*/
+@mixin side {
+  padding: 5%;
+  background-color: $firstColor;
+  color: white;
+  h1 {
+    padding: 0 10%
+  }
+  li {
+    list-style: none;
+    padding: 10% 0;
+    margin: 0;
+  }
+}
+
 /**setting the margin to zero fills out the max width for the body and a default font is also set**/
 body {
   margin: 0;
@@ -128,6 +143,7 @@ a {
   background-image: url(https://images.pexels.com/photos/461593/pexels-photo-461593.jpeg?auto=compress&cs=tinysrgb&h=350);
   background-size: cover;
 }
+
 /**creating a grid**/
 main {
   display: grid;
@@ -137,34 +153,24 @@ main {
                        "contThirdRow contThirdRow"
                        "contFourthRow contFourthRow";
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.8fr repeat(2, 1fr) repeat(2, 0.8fr);
+  grid-template-rows: 0.3fr repeat(2, 1fr) repeat(2, 0.8fr);
   grid-gap: 10px;
 }
 
-/**placing content into the grid*/
-/*section, #sidebar {
-  background-color: lightgrey;
-}*/
 aside {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 0.2fr repeat(2, 0.1fr) 1fr;
+  grid-template-rows: 0.2fr repeat(2, 0.1fr);
   grid-gap: 0;
 }
 article {
   grid-column: 1/3;
 }
-#fakeSidebar {
-  grid-column: 1/3;
-}
 
 /**---------------------------------------**/
 
-#fakeSidebar {
-  padding-left: 5%;
-  background-color: $firstColor;
-  color: white;
-
+#sidebar {
+  display: none;
 }
 /**---------------------------------------**/
 
@@ -201,7 +207,6 @@ grid-area: contFourthRow;
 
 section {
   padding: $firstPix;
-  // border: 1px lightgrey solid;
   box-shadow: 0px 10px 40px darkgrey;
 }
 
@@ -236,6 +241,21 @@ hr {
   border-radius: 50%;
 }
 
+footer {
+  position: relative;
+  background-color: white;
+  border-top: 5px $secondColor solid;
+  width: 100%;
+  height: 50px;
+  span {
+    position: absolute;
+    padding: 1%;
+    bottom: 5%;
+    right: 2%;
+    color: $secondColor;
+  }
+}
+
 /*----------------------------------------*/
 /*----------Media Inquiries-----------*/
 
@@ -250,12 +270,12 @@ hr {
     margin: 0 0;
   }
   main {
-    grid-template-rows: 0.5fr repeat(2, 1fr) repeat(2, 0.8fr);
+    grid-template-rows: 0.2fr 1fr repeat(3, 0.8fr);
   }
   aside {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 0.2fr 0.1fr 1fr;
+    grid-template-rows: 0.2fr 0.1fr;
     margin: 0 $secondPercent + $firstPercent - 1%;
     img {
       margin: 0;
@@ -263,9 +283,6 @@ hr {
     }
   }
   article {
-    grid-column: 1/5;
-  }
-  #fakeSidebar {
     grid-column: 1/5;
   }
 }
@@ -297,24 +314,13 @@ hr {
     line-height: 20px;
   }
 
-  #fakeSidebar {
-    display: none;
-  }
   #sidebar {
-    color: white;
-    background-color: $firstColor;
+    display: block;
+    @include side;
     position: sticky;
     top: 13px;
     grid-area: side;
     height: 26%;
-    /*h1 {
-      background-color: $firstColor;
-      padding: 10%;
-      border-radius: 50%;
-      font-size: 35px;
-      margin-top: 350px;
-      transform: translate(0px, 0px) rotate(-45deg);
-    }*/
   }
 
 
