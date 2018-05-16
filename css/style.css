@@ -85,19 +85,24 @@ a {
     color: white; }
 
 #hike {
-  background-image: url(https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb&h=350); }
+  background-image: url(https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg?auto=compress&cs=tinysrgb&h=350);
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #fish {
   background-image: url(https://images.pexels.com/photos/205712/pexels-photo-205712.jpeg?auto=compress&cs=tinysrgb&h=350);
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #camp {
   background-image: url(https://images.pexels.com/photos/213807/pexels-photo-213807.jpeg?auto=compress&cs=tinysrgb&h=350);
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #rockClimb {
   background-image: url(https://images.pexels.com/photos/461593/pexels-photo-461593.jpeg?auto=compress&cs=tinysrgb&h=350);
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 /**creating a grid**/
 main {
@@ -105,7 +110,8 @@ main {
   grid-template-areas: "art art" "contFirstRow contFirstRow" "contSecondRow contSecondRow" "contThirdRow contThirdRow" "contFourthRow contFourthRow";
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 0.3fr repeat(2, 1fr) repeat(2, 0.8fr);
-  grid-gap: 10px; }
+  grid-gap: 10px;
+  overflow: hidden; }
 
 aside {
   display: grid;
@@ -199,7 +205,8 @@ footer {
     margin: 0 0; }
 
   main {
-    grid-template-rows: 0.2fr 1fr repeat(3, 0.8fr); }
+    grid-template-rows: 0.2fr 1fr repeat(3, 0.8fr);
+    overflow: hidden; }
 
   aside {
     display: grid;
@@ -220,7 +227,8 @@ footer {
   main {
     grid-template-areas: "side art art" "side contFirstRow contFirstRow" "side contSecondRow contSecondRow" "side contThirdRow contThirdRow" "side contFourthRow contFourthRow";
     grid-template-columns: 20% repeat(2, 1.1fr);
-    grid-template-rows: 0.2fr 1fr; }
+    grid-template-rows: 0.2fr 1fr;
+    overflow: visible; }
 
   aside {
     grid-column: 2/4;
@@ -232,20 +240,27 @@ footer {
     line-height: 20px; }
 
   #sidebar {
+    background-image: url("https://c.pxhere.com/photos/15/b5/tree_grates_annual_rings_wood_weathered_grain_structure_tribe_of_course-674872.jpg!d");
+    background-size: cover;
     display: block;
-    padding: 5%;
-    background-color: #284316;
     color: white;
     position: sticky;
     top: 13px;
     grid-area: side;
-    height: 26%; }
+    height: 24%; }
     #sidebar h1 {
+      font-size: 40px;
       padding: 0 10%; }
-    #sidebar li {
-      list-style: none;
-      padding: 10% 0;
-      margin: 0; }
+    #sidebar div {
+      padding: 5%;
+      display: grid;
+      grid-template-rows: repeat(4, 0.8fr);
+      grid-gap: 10px; }
+      #sidebar div span {
+        background-color: #284316;
+        padding: 5%; }
+        #sidebar div span h3 {
+          text-align: center; }
 
   #hiking {
     grid-column: 2/3;
@@ -262,5 +277,34 @@ footer {
   #rockClimbing {
     grid-column: 3/4;
     grid-row: 3/4; } }
+/*------Styling for contact forms------*/
+#contactBody {
+  background-image: url(http://vunature.com/wp-content/uploads/2017/02/mountains-screen-dual-multi-monitor-hd-images-of-nature-for-desktop.jpg);
+  background-attachment: fixed;
+  background-size: cover; }
+
+#content h1 {
+  color: #284316;
+  font-size: 60px;
+  text-align: center;
+  background-color: transparent; }
+#content #contactForm {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 350px 1fr; }
+  #content #contactForm form {
+    position: absolute;
+    background-color: white;
+    padding: 5%;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 30px) 100px 30px;
+    width: 350px;
+    grid-gap: 1px; }
+    #content #contactForm form button {
+      grid-column: 1/3; }
+#content .transparentDiv {
+  background-color: transparent; }
 
 /*# sourceMappingURL=style.css.map */
