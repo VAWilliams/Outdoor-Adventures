@@ -255,11 +255,12 @@ footer {
   }
 }
 
-/*----------------------------------------*/
-/*----------Media Inquiries-----------*/
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------Media Inquiries-----------------------------------------------------------*/
 
 
-/*---Tablet---*/
+/*------------------------Tablet-------------------------*/
+
 @media (min-width: 700px) {
   section {
     margin: 0 $secondPercent + $firstPercent;
@@ -289,7 +290,8 @@ footer {
 
 
 
-/*---Desktop---*/
+/*------------------------Desktop-------------------------*/
+
 @media (min-width: 1024px) {
   section {
     margin: 0 $firstPercent - 3%;
@@ -356,43 +358,115 @@ footer {
   grid-column: 3/4;
   grid-row: 3/4;
   }
-
 }
 
-/*------Styling for contact forms------*/
-#contactBody {
-  background-image: url(http://vunature.com/wp-content/uploads/2017/02/mountains-screen-dual-multi-monitor-hd-images-of-nature-for-desktop.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-}
-#content {
+
+//******************************************************************************************************************************************
+//******************************************************************************************************************************************
+
+
+
+/*------Styling for contact form------*/
+
+#contactContent {
+  display: grid;
+  grid-template-columns: 1fr 310px 1fr;
+  grid-row: 1fr;
   h1{
     color: $firstColor;
-    font-size: 60px;
+    font-size: 54px;
     text-align: center;
-    background-color: transparent;
   }
-
   #contactForm {
-    position: relative;
-    display: grid;
-    grid-template-columns: 0.9fr 350px 1fr;
+    grid-column: 2/3;
     form {
-      position: absolute;
       background-color: white;
       padding: 5%;
-      grid-column: 2/3;
       display: grid;
-      grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(4, 30px) 100px 30px;
-      width: 350px;
+      width: 260px;
       grid-gap: 1px;
       button{
         grid-column: 1/3;
       }
     }
   }
+  #transparentLeft {
+    grid-column: 1/2;
+  }
+  #transparentRight {
+    grid-column: 3/4;
+  }
   .transparentDiv {
-    background-color: transparent;
+    background-image: url(https://i.pinimg.com/originals/2c/c1/e1/2cc1e1ef1ef03f69ec13995154245986.png);
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
+/*-----------------------------------------*/
+
+
+
+//******************************************************************************************************************************************
+//******************************************************************************************************************************************
+
+
+
+/*-----------Styling for gallery-----------*/
+.activities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px repeat(2, 200px);
+  grid-gap: 5px;;
+  h2 {
+    grid-column: 1/5;
+  }
+  .img {
+    position: relative;
+    background-size: cover;
+    .caption {
+      position: absolute;
+      background-color: white;
+      left: 2%;
+      right: 2%;
+      bottom: -10%;;
+      padding: 2%;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
+    overflow: hidden;
+  }
+  /*--------------Hiking--------------*/
+  /*---Positioning and structuring---*/
+  #skel_gorgeFirstImg {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    background-image: url(https://i0.wp.com/www.walkinafrica.com/wp-content/uploads/1304723_orig.jpg);
+  }
+  #skel_gorgeSecondImg {
+    grid-column: 3/5;
+    grid-row: 2/3;
+    background-image: url(http://www.aroundaboutcars.com/blog/wp-content/uploads/2016/11/Damien-du-toit-table-mountain-Skeleton-gorge.jpg);
+  }
+  #olifantsbosFirstImg {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    background-image: url(https://i1.wp.com/nospeedlimit.co.za/wp-content/uploads/2017/08/tn_20170827_084601.jpg);
+  }
+  #olifantsbosSecondImg {
+    grid-column: 3/5;
+    grid-row: 3/4;
+    background-image: url(http://2.bp.blogspot.com/-tSA51JyuHYI/Tb_MuXbu6cI/AAAAAAAAJ24/dq-pH0CsARQ/s1600/IMG_0702.JPG);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------*/
